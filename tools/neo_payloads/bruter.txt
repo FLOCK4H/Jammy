@@ -1,0 +1,8 @@
+\n\n<time0.2>1234\n<time0.2>1111\n<time0.2>0000\n<time0.1>2222\n<time0.1>3333\n<time62>;
+<time0.1>4444\n<time0.1>5555\n<time0.2>6666\n<time0.2>7777\n<time0.2>1212\n;
+<time0.2>1004\n<time0.2>2000\n<time0.2>6959\n<time0.2>9999\n<time0.2>1122\n;
+<time0.2>1313\n<time0.2>4321\n<time0.2>2010\n<time0.2>1010\n<time0.2>8557\n;
+<time0.2>9047\n<time0.2>8438\n<time0.2>0439\n<time0.2>9539\n<time0.2>8196\n;
+<time0.2>7063\n<time0.2>6093\n<time0.2>6827\n<time0.2>7394\n<time0.2>0859\n;
+<time0.2>8957\n<time0.2>9480\n<time0.2>6793\n<time0.2>8398\n<time0.2>0738\n;
+<time0.2>7637\n<time0.2>6835\n<time0.2>9629\n<time0.2>8068\n;

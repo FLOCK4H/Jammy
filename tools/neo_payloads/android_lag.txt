@@ -1,0 +1,1 @@
+\n\n\n<ESC><ESC><ESC><ESC>\n\n<ESC><ESC><ESC><ESC>\n\n\n\n\n<ESC>\n\n\n\n\n\n<ESC><SCR><ESC><ESC><ESC><SCR><ESC><ESC><SCR><ESC><SCR><SCR><SCR><SCR><SCR><SCR><ESC><ESC><ESC>\n\n\n\n\n<ESC><ESC><SCR><SCR><SCR><SCR><SCR><SCR><ESC><ESC>\n\n\n\n<GUI><SCR><GUI>\n\n\n\n<GUI><GUI><GUI>\n\n\n\n<GUI><SCR><GUI><GUI><SCR><SCR><SCR><SCR><SCR><SCR>\n\n\n\n<GUI><GUI><GUI><GUI><GUI><GUI><LOOP>
