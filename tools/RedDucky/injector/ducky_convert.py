@@ -1,6 +1,6 @@
-from tools.BluetoothDucky.injector.hid import Key, Mod
+from tools.RedDucky.injector.hid import Key, Mod
 from .helpers import log
-from tools.BluetoothDucky.injector.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
+from tools.RedDucky.injector.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
 
 def send_string(client, string_to_send, start_pos=0):
     log.debug(f"{YELLOW}Sending string: {string_to_send}")

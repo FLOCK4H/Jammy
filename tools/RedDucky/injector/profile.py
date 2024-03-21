@@ -21,7 +21,7 @@ def register_hid_profile(iface, addr):
   profile_path = "/test/profile"
   profile = Profile(bus, profile_path)
   hid_uuid = "00001124-0000-1000-8000-00805F9B34FB"
-  with open("tools/BluetoothDucky/keyboard.xml", "r") as f:
+  with open("tools/RedDucky/keyboard.xml", "r") as f:
     opts = { "ServiceRecord": f.read() }
   log.debug("calling RegisterProfile")
   manager.RegisterProfile(profile, hid_uuid, opts)

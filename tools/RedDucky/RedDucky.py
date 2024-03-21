@@ -10,16 +10,16 @@ import re
 import os
 import bluetooth
 
-from tools.BluetoothDucky.injector.hid import keyboard_report
+from tools.RedDucky.injector.hid import keyboard_report
 from multiprocessing import Process
-from tools.BluetoothDucky.injector.helpers import assert_address, log, run
-from tools.BluetoothDucky.injector.client import KeyboardClient
-from tools.BluetoothDucky.injector.adapter import Adapter
-from tools.BluetoothDucky.injector.agent import PairingAgent
-from tools.BluetoothDucky.injector.hid import Key
-from tools.BluetoothDucky.injector.profile import register_hid_profile
-from tools.BluetoothDucky.injector.ducky_convert import send_string, send_ducky_command
-from tools.BluetoothDucky.injector.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
+from tools.RedDucky.injector.helpers import assert_address, log, run
+from tools.RedDucky.injector.client import KeyboardClient
+from tools.RedDucky.injector.adapter import Adapter
+from tools.RedDucky.injector.agent import PairingAgent
+from tools.RedDucky.injector.hid import Key
+from tools.RedDucky.injector.profile import register_hid_profile
+from tools.RedDucky.injector.ducky_convert import send_string, send_ducky_command
+from tools.RedDucky.injector.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
 
 current_command_index = 0
 
@@ -200,7 +200,7 @@ def BlueDucky(target, interface):
 
         if connect_to_target(adapter, client, target):
             log.status(f"{CYAN}Injecting payload")
-            execute_payload(adapter, client, 'tools/BluetoothDucky/payload.txt', target)
+            execute_payload(adapter, client, 'tools/RedDucky/payload.txt', target)
             profile_proc.terminate()
             client.close()
 
@@ -243,7 +243,7 @@ def get_ret_interface():
     return selected_interface
 
 def manage_savelist(action, target=None):
-    path_to_saved_file = "tools/BluetoothDucky/saved.txt"
+    path_to_saved_file = "tools/RedDucky/saved.txt"
     if action == "write":
         try:
             name = cinput("Remember device? (enter a name or leave empty for no)")

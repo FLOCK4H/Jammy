@@ -2,9 +2,9 @@ import binascii
 import bluetooth
 import time
 from threading import Thread
-from tools.BluetoothDucky.injector.hid import keyboard_report, ascii_to_hid
+from tools.RedDucky.injector.hid import keyboard_report, ascii_to_hid
 from .helpers import log
-from tools.BluetoothDucky.injector.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
+from tools.RedDucky.injector.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
 
 
 class L2CAPClient:
