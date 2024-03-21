@@ -450,7 +450,7 @@ def action_captive_portal(e=None):
 def action_blue_ducky(e=None):
     cprint("Launching the framework..")
     time.sleep(1)
-    from tools.BluetoothDucky.BluetoothDucky import RedDucky
+    from tools.RedDucky.RedDucky import RedDucky
     RedDucky()
     iprint("Byee")
     time.sleep(5)
