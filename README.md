@@ -27,7 +27,10 @@ Backpack loaded with tools for hacking, finding vulnerabilities, cracking passwo
 <details>
 <summary>Click to expand the troubleshoot section for this step</summary>
 
+<br>
+
 If for any reason pybluez fails to install, please follow the process below:
+
 ```
   $ git clone https://github.com/pybluez/pybluez.git
   $ cd pybluez
@@ -36,7 +39,9 @@ If for any reason pybluez fails to install, please follow the process below:
   $ sudo python setup.py build
   $ sudo python setup.py install
 ```
+
 If for any reason the above commands fail, then try:
+
 ```
   $ sudo python setup.py install_lib
   $ sudo python setup.py install
