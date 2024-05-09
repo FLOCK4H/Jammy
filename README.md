@@ -1,4 +1,6 @@
-![image](https://flockcdn.b-cdn.net/jammy.svg)
+<div align="center">
+  <img src="https://flockahh.b-cdn.net/jammy.svg" width="256" alt="Jammy logo" />
+</div>
 
 # Jammy
 
