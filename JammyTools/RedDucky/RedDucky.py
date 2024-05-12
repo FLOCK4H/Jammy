@@ -10,16 +10,16 @@ import re
 import os
 import bluetooth
 
-from tools.RedDucky.injector.hid import keyboard_report
+from JammyTools.RedDucky.injector.hid import keyboard_report
 from multiprocessing import Process
-from tools.RedDucky.injector.helpers import assert_address, log, run
-from tools.RedDucky.injector.client import KeyboardClient
-from tools.RedDucky.injector.adapter import Adapter
-from tools.RedDucky.injector.agent import PairingAgent
-from tools.RedDucky.injector.hid import Key
-from tools.RedDucky.injector.profile import register_hid_profile
-from tools.RedDucky.injector.ducky_convert import send_string, send_ducky_command
-from tools.RedDucky.injector.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
+from JammyTools.RedDucky.injector.helpers import assert_address, log, run
+from JammyTools.RedDucky.injector.client import KeyboardClient
+from JammyTools.RedDucky.injector.adapter import Adapter
+from JammyTools.RedDucky.injector.agent import PairingAgent
+from JammyTools.RedDucky.injector.hid import Key
+from JammyTools.RedDucky.injector.profile import register_hid_profile
+from JammyTools.RedDucky.injector.ducky_convert import send_string, send_ducky_command
+from JammyTools.RedDucky.injector.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
 
 current_command_index = 0
 

@@ -8,9 +8,7 @@ import fcntl
 import os
 import time
 from errno import EALREADY
-import subprocess
 import threading
-import sys
 
 RED = "\033[31m"
 GREEN = '\033[32m'
@@ -19,7 +17,6 @@ CYAN = '\033[36m'
 WHITE = '\033[37m'
 RESET = "\033[0m"
 BRIGHT = '\033[1m'
-
 
 def decode_hex(string):
     """Decodes a hex string to bytes."""
@@ -113,7 +110,6 @@ def SourSams(inf):
 
     print("Hold on tight, we are flying far away!")
     try:
-        i = 0
         while True:
 
             send_packet(sock)
