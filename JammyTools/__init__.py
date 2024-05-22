@@ -4,7 +4,7 @@ from .sour import SourApple
 from .redtooth import startooth
 from .JammyDoS import jammy_dos
 from .colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
-
+from .slowloris import main
 __all__ = [
     'start_mask', 'airspam',
     'SourApple',
@@ -13,5 +13,5 @@ __all__ = [
     'cprint', 'iprint', 'wprint', 'cinput', 
     'RED', 'GREEN', 'WHITE', 'MAGENTA', 'BLUE', 'RESET', 'BRIGHT', 'CYAN', 'YELLOW', 
     'LIGHT_GREEN', 'BLACK', 'LIGHT_YELLOW', 'LIGHT_RED', 'LIGHT_BLUE', 'LIGHT_CYAN', 
-    'LIGHT_MAGENTA', 'LIGHT_WHITE'
+    'LIGHT_MAGENTA', 'LIGHT_WHITE', 'main'
 ]

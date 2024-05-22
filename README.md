@@ -22,7 +22,7 @@ Backpack loaded with tools for hacking, finding vulnerabilities, cracking passwo
 
 # Setup
 
-## Install required python libraries
+<strong>1. Install required python libraries</strong>
 ```
   $ pip install pybluez 
 ```
@@ -50,15 +50,52 @@ If for any reason the above commands fail, then try:
 ```
 </details>
 
-## Install necessary tools
+<strong>2. Install necessary tools</strong>
 ```
   $ sudo apt update
   $ sudo apt-get install mdk4 wifite aircrack-ng eaphammer
 ```
 
+<strong>3. Install Jammy</strong>
+
+```
+  $ cd Jammy
+  $ sudo pip install .
+```
+
 # Usage
 
 ```
-  $ cd jammy
-  $ sudo python jammy
+  $ sudo Jammy
 ```
+
+Or with additional arguments to skip CLI questions partially or completely:
+
+```
+  $ sudo Jammy -i wlan1 -a slowloris
+```
+
+The '-a' argument has to be the same as the name or number as is in the CLI, when you are in the **Jammy's** menu.
+
+> Example commands:
+> b - beacon flood, a - auth attack, p - probe requests spam, d - deauth attack, f - packet fuzzer, wifite - wifite, wificap - monitors and stores to a .cap file, rage - target DoS, watchspam - implementation of samsung watch spam, shark - run phishing tool, et - evil twin attack
+
+# Credits
+
+Authors of: 
+
+- Blueducky
+
+&emsp;**saad0x1** - https://github.com/saad0x1
+
+&emsp;**pentestfunctions** - https://github.com/pentestfunctions
+
+- Shark - **Bhaviktutorials** (https://github.com/Bhaviktutorials)
+
+- mdk - https://github.com/aircrack-ng/mdk4
+
+- eaphammer - https://github.com/s0lst1c3/eaphammer
+
+- wifite - https://github.com/derv82/wifite2
+
+- hashcat - https://github.com/hashcat/hashcat

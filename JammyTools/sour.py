@@ -1,6 +1,6 @@
 # Credits to https://github.com/RapierXbox
 import random
-import bluetooth._bluetooth as bluez
+import bluetooth._bluetooth as bluez # sudo pip install pybluez
 from time import sleep
 import struct
 import socket

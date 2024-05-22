@@ -28,7 +28,7 @@ class PostInstallCommand(install):
 
 setup(
     name='Jammy',
-    version='4.2.0.26',
+    version='4.2.0.28',
     author='FLOCK4H',
     url='github.com/FLOCK4H/Jammy',
     description='Jammy - Backpack full of hacking tools',

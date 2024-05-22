@@ -11,6 +11,7 @@ import sys
 from platform import platform
 from JammyTools.colors import cprint, iprint, wprint, cinput, RED, GREEN, WHITE, MAGENTA, BLUE, RESET, BRIGHT, CYAN, YELLOW, LIGHT_GREEN, BLACK, LIGHT_YELLOW, LIGHT_RED, LIGHT_BLUE, LIGHT_CYAN, LIGHT_MAGENTA, LIGHT_WHITE
 import shutil
+import argparse
 
 """
     IMPORTANT: 
@@ -144,9 +145,7 @@ class Welcome:
                 os.system(f"echo \"0\" > /proc/net/rtl88XXau/{self.wlan}/led_ctrl")
         else:
             return iprint("Couldn't find AWUS036XXX! Make sure you are using proper equipment.")
-
-settings = Welcome()
-
+        
 def display_banner():
     print(f"""\033[36m{BRIGHT} 
    ___                                                                         
@@ -169,8 +168,27 @@ def display_banner():
         {RESET}""")
 
 class Jammer:
-    def __init__(self):
-        self.wlan = settings.wlan
+    def __init__(self, interface):
+        if interface is None:
+            self.settings = Welcome()
+
+        self.wlan = self.settings.wlan if interface is None else interface
+
+    def toggle_awus_led(self, mode):
+        if os.path.exists(f"/proc/net/rtl88XXau/{self.wlan}/led_ctrl"):
+            if mode == "on":
+                os.system(f"echo \"1\" > /proc/net/rtl88XXau/{self.wlan}/led_ctrl")
+            elif mode == "off":
+                os.system(f"echo \"0\" > /proc/net/rtl88XXau/{self.wlan}/led_ctrl")
+        else:
+            return iprint("Couldn't find AWUS036XXX! Make sure you are using proper equipment.")
+
+    def init_monitor_mode(self, mode="monitor"):
+        try:
+            for interface in self.interface:
+                os.system(f'sudo iwconfig {interface} mode {mode}')
+        except Exception as e:
+            wprint(f"Error while putting interface in monitor mode: {e}")
 
     def safecall(self, cmd, debug=""):
         try:
@@ -544,6 +562,12 @@ class Jammer:
 
         self.safecall(f"sudo hashcat -m 22000 {hs_path} {wordlist_path} -o {output_path if output_path != '' else os.path.join(os.path.dirname(__file__), 'hs_output.txt')}")
 
+    def action_slowloris(self, e=None):
+        clear()
+
+        from JammyTools.slowloris import main
+        host = cinput("Enter domain or an IP address")
+        main(host)
 
 class Neo:
     def __init__(self):
@@ -890,6 +914,7 @@ def print_options_per_mode(mode):
         cprint("15) rage - Perform DDoS attack on the target ip:port")
         cprint("18) bd - BlueDucky HID BLE Attack")
         cprint("19) localdos - Flood a device from your local network")
+        cprint("28) slowloris - DoS method")
 
     elif mode == "crackers":
         print(f"""{BRIGHT}
@@ -902,29 +927,29 @@ def print_options_per_mode(mode):
         cprint("26) cpmkid - Crack PMKID")
         cprint("27) chs - Crack 4-way Handshake")
 
-def display_menu():
-    clear()
-    jammy = Jammer()
-    neo = Neo()
+def display_menu(interface=None, action=None):
+
     current_mode = None
-    main_option = main_menu()
-    modes = [{"wifi": 1}, {"bt": 2}, {"ble": 3}, {"hid": 4}, {"exploits": 5}, {"phishing": 6}, {"crackers": 7}]
-    for mode in modes:
-        for k, v in mode.items():
-            if v == main_option:
-                current_mode = k
-                break
+    o = None
+    if action is None:
+        main_option = main_menu()
+        modes = [{"wifi": 1}, {"bt": 2}, {"ble": 3}, {"hid": 4}, {"exploits": 5}, {"phishing": 6}, {"crackers": 7}]
+        for mode in modes:
+            for k, v in mode.items():
+                if v == main_option:
+                    current_mode = k
+                    break
 
-    print_options_per_mode(current_mode)
-    cprint("17) e - >> EXIT JAMMY <<")
-    cprint("XX) back - Previous page")
+        print_options_per_mode(current_mode)
+        cprint("17) e - >> EXIT JAMMY <<")
+        cprint("XX) back - Previous page")
 
-    eline()
-    o = cinput("Enter option's name or number & arguments")
-    time.sleep(1)
-    clear()
-    if o == "back" or o == "bb" or o == "prev" or o == "bk":
-        return display_menu()
+        eline()
+        o = cinput("Enter option's name or number & arguments")
+        time.sleep(1)
+        clear()
+        if o == "back" or o == "bb" or o == "prev" or o == "bk":
+            return display_menu()
 
     action_list = [
         {"key": "b", "number": 1, "action": jammy.action_bflood},
@@ -954,9 +979,10 @@ def display_menu():
         {"key": "shark", "number": 25, "action": jammy.action_run_shark},
         {"key": "cpmkid", "number": 26, "action": jammy.action_pmkid_crack},
         {"key": "chs", "number": 27, "action": jammy.action_handshake_crack},
+        {"key": "slowloris", "number": 28, "action": jammy.action_slowloris},
 
     ]
-    execute_action(o, action_list)
+    execute_action(o if o else action, action_list)
 
 def execute_action(input_str, action_list):
     parts = input_str.split(' ', 1)
@@ -966,7 +992,8 @@ def execute_action(input_str, action_list):
     for action in action_list:
         if command == action["key"] or command == str(action["number"]):
             action["action"](args)
-            time.sleep(4)
+            iprint("Leaving to menu... (press Ctrl+C to exit)")
+            time.sleep(3)
             display_menu()
             return
     
@@ -975,11 +1002,27 @@ def execute_action(input_str, action_list):
     time.sleep(0.8)
     display_menu()
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Freeway for Network Pentesting")
+    parser.add_argument("-i", "--inf", type=str, required=False, help="Specify the WLAN interface (e.g. wlan0)")
+    parser.add_argument("-a", "--action", type=str, required=False, help="Action number or alias (e.g. 1 or wificap)")
+    
+    args = parser.parse_args()
+    return parser, args
+
 if __name__ == '__main__':
+    parser, args = parse_arguments()
+    interface = args.inf
+    action = args.action
+
+    clear()
+    jammy = Jammer(interface)
+    neo = Neo()
+
     try:
-        display_menu()
+        display_menu(interface, action)
     except KeyboardInterrupt:
-        settings.toggle_awus_led("off")
+        jammy.toggle_awus_led("off")
 
         eline()
         iprint("Byee")
