@@ -4,7 +4,7 @@
 
 # Jammy
 
-Backpack loaded with tools for hacking, finding vulnerabilities, cracking passwords, and more..
+Backpack loaded with tools for hacking, finding vulnerabilities, cracking passwords, phishing, network auditing, network pentesting, bluetooth/ble spammers, and way more..
 
 > [!WARNING]
 > **BEFORE PROCEEDING**<br><br>
