@@ -101,7 +101,14 @@ The '-a' argument has to be the same as the name or number as is in the CLI, whe
 
 **Evil Twin** - In order to perform the attack we must have the **eaphammer** installed. The setup file has added to its path a new template named google, which will serve as our credential harvest site. Make sure you have correct hostapd.conf in **/etc/hostapd/hostapd.conf**, which is a config file, then if we installed everything necessary, we can run the **eaphammer**, by running Jammy and getting into WiFi command line.
 
-**MDK4** - is a framework for WiFi **Pentesting**, run options as 'a, b, f, m, d'
+**MDK4** - is a framework for WiFi **Pentesting**, where you can use provided techniques: 
+- a - Authentication DoS attack,
+- b - Beacon Flood Attack,
+- f - Packet Fuzzer,
+- m - Michael Countermeasures Exploitation Attack (DoS),
+- d - Deauthentication Attack (DoS)
+
+
 
 # Credits
 
