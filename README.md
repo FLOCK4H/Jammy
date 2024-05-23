@@ -130,10 +130,9 @@ The '-a' argument has to be the same as the name or number as is in the CLI, whe
 
 **DDoS** - this exploit will send http requests using bots, along with headers in order to keep the target device busy. To run, just enter `rage` and provide IP address of a machine.
 
-**
+**Local DoS** - the `hping` is sufficient for home networks, not really suitable for online DoS, as we would need more machines. This is why, running Local DoS on most WiFi host IP, will result in `No Internet Connection`, because the packets we send are too large to process.
 
-
-
+**Slowloris** - this attack creates sockets, initiates the connection, and never ends it. Effectively keeping the target threaded server busy.
 
 # Credits
 
