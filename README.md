@@ -108,6 +108,31 @@ The '-a' argument has to be the same as the name or number as is in the CLI, whe
 - m - Michael Countermeasures Exploitation Attack (DoS),
 - d - Deauthentication Attack (DoS)
 
+**Monitor Tools** - running the `wificap` or `mon` we can sniff current **Network Environment** for packets, using airodump-ng or the Freeway suites. The `wificap` will save the output to the **.cap** file.
+
+**wifite** - an exploitation framework, meant for beginners and professionals to stack every password capture method under one place. By running wifite we will be introduced to next part via the CLI.
+
+2. Bluetooth/ BLE
+
+**BLE Spam** - Spam Apple or Samsung advertisements, or disguise into Airpods, in order to confuse nearby devices, and display a notification pop up on any nearby Samsung (works for LG too) or Apple device. **May crash iOS upto 17.2**
+
+**Redtooth** - author's implementation of the old&good `l2ping` DoS attack, this tool has a chance of crashing the bluetooth device.
+
+**Bluefog** - author's implementation of the bluefog attack method, but instead of device fog (many advertisements) we just change name on BT adapter **very frequently**. It's a camouflage technique.
+
+**BlueDucky** - exploitation framework, that turns any machine with bluetooth adapter, into **Bluetooth HID Keyboard** device, that you can write a payload for, and execute on other bluetooth device (like phone, laptop), in some cases without pairing.
+
+3. HID
+
+**NeoDucky** - NeoDucky is a **Rubber Ducky** device, that when properly configured, may inject malware, harvest data, jam keyboards, and more. Jammy has built-in support for turning NeoDucky on/off, uploading payloads and managing stealth mode. More on ![NeoDucky](https://github.com/FLOCK4H/NeoDucky)
+
+4. Exploits
+
+**DDoS** - this exploit will send http requests using bots, along with headers in order to keep the target device busy. To run, just enter `rage` and provide IP address of a machine.
+
+**
+
+
 
 
 # Credits
