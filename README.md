@@ -87,7 +87,7 @@ Or with additional arguments to skip CLI questions partially or completely:
   $ sudo Jammy -i wlan1 -a slowloris
 ```
 
-The '-a' argument has to be the same as the name or number as is in the CLI, when you are in the **Jammy's** menu.
+The '-a' argument has to be the same as the name or number as is in the CLI, so when you are in the **Jammy's** menu.
 
 > Example commands:
 > b - beacon flood, a - auth attack, p - probe requests spam, d - deauth attack, f - packet fuzzer, wifite - wifite, wificap - monitors and stores to a .cap file, rage - target DoS, watchspam - implementation of samsung watch spam, shark - run phishing tool, et - evil twin attack, 17 more..
@@ -133,6 +133,14 @@ The '-a' argument has to be the same as the name or number as is in the CLI, whe
 **Local DoS** - the `hping` is sufficient for home networks, not really suitable for online DoS, as we would need more machines. This is why, running Local DoS on most WiFi host IP, will result in `No Internet Connection`, because the packets we send are too large to process.
 
 **Slowloris** - this attack creates sockets, initiates the connection, and never ends it. Effectively keeping the target threaded server busy.
+
+5. Phishing
+
+**shark** - Shark is a framework with 50+ phishing templates, we can find there google, facebook, whatsapp, camera hacks, mic hacks, and many others. Shark can be hosted on ngrok (need API token), or cloudflare (doesn't need anything).
+
+6. Cracking
+
+**Hashcat** - extremely popular tool used for password decryption, we must first capture the password packet (PMKID/ Handshake) in hashcat crackable format, we can do this using the ![Freeway](https://github.com/FLOCK4H/Freeway), then just provide path to captured password file, and the wordlist.
 
 # Credits
 
