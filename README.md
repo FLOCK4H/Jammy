@@ -6,11 +6,8 @@
 
 Backpack loaded with tools for hacking, finding vulnerabilities, cracking passwords, phishing, network auditing, network pentesting, bluetooth/ble spammers, and way more..
 
-> [!WARNING]
-> **BEFORE PROCEEDING**<br><br>
-> You must follow local laws when using these tools, misusing them could lead to legal trouble.<br>
-> Always ensure you have explicit permission to hack, exploit or damage the device,<br>
-> the author is not responsible for any damage caused by Jammy.
+> [!TIP]
+> It's better to stay away from any trouble. **Pentesting** must be conducted, by following the local, and ethical guidelines.
 
 # Requirements
 
@@ -27,7 +24,7 @@ Backpack loaded with tools for hacking, finding vulnerabilities, cracking passwo
   $ pip install pybluez 
 ```
 <details>
-<summary>Click to expand the troubleshoot section for this step</summary>
+<summary><strong>Click to expand the troubleshoot section for this step</strong></summary>
 
 <br>
 
@@ -51,6 +48,7 @@ If for any reason the above commands fail, then try:
 </details>
 
 <strong>2. Install necessary tools</strong>
+
 ```
   $ sudo apt update
   $ sudo apt-get install mdk4 wifite aircrack-ng eaphammer
@@ -58,8 +56,22 @@ If for any reason the above commands fail, then try:
 
 <strong>3. Install Jammy</strong>
 
+**Clone Jammy**
+
+```
+  $ git clone https://github.com/FLOCK4H/Jammy
+```
+
+**Change directory into Jammy**
+
 ```
   $ cd Jammy
+```
+
+**Run the setup file**
+
+```
+  # This will find the setup.py file by itself
   $ sudo pip install .
 ```
 
