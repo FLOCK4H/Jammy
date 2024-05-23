@@ -4,7 +4,7 @@
 
 # Jammy
 
-Backpack loaded with tools for hacking, finding vulnerabilities, cracking passwords, phishing, network auditing, network pentesting, bluetooth/ble spammers, and way more..
+Backpack loaded with tools for hacking, finding vulnerabilities, cracking passwords, phishing, network auditing, network pentesting, bluetooth/ble spammers, hid attacks, and way more..
 
 > [!TIP]
 > It's better to stay away from any trouble. **Pentesting** must be conducted, by following the local, and ethical guidelines.
