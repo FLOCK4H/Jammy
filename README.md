@@ -148,7 +148,7 @@ If you did not install Jammy, you can still run via python:
 
 **3. HID**
 
-**NeoDucky** - NeoDucky is a **Rubber Ducky** device, that when properly configured, may inject malware, harvest data, jam keyboards, and more. Jammy has built-in support for turning NeoDucky on/off, uploading payloads and managing stealth mode. More on !(NeoDucky)[https://github.com/FLOCK4H/NeoDucky]
+**NeoDucky** - NeoDucky is a **Rubber Ducky** device, that when properly configured, may inject malware, harvest data, jam keyboards, and more. Jammy has built-in support for turning NeoDucky on/off, uploading payloads and managing stealth mode. More on ![NeoDucky](https://github.com/FLOCK4H/NeoDucky)
 
 **4. Exploits**
 
@@ -164,7 +164,7 @@ If you did not install Jammy, you can still run via python:
 
 **6. Cracking**
 
-**Hashcat** - extremely popular tool used for password decryption, we must first capture the password packet (PMKID/ Handshake) in hashcat crackable format, we can do this using the !(Freeway)[https://github.com/FLOCK4H/Freeway], then just provide path to captured password file, and the wordlist.
+**Hashcat** - extremely popular tool used for password decryption, we must first capture the password packet (PMKID/ Handshake) in hashcat crackable format, we can do this using the ![Freeway](https://github.com/FLOCK4H/Freeway), then just provide path to captured password file, and the wordlist.
 
 # Credits
 
