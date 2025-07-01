@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://flockahh.b-cdn.net/jammy.svg" width="256" alt="Jammy logo" />
+  <img src="https://github.com/user-attachments/assets/23c8bcee-360f-496b-9985-3c6912730cd8" width="256" alt="Jammy logo" />
 </div>
 
 # Jammy
